@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-mockdata",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Mock data generator MCP.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-mockdata": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "mockdata"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-mockdata.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/mockdata",
   "pipeworx": {
-    "sourceHash": "v1-c15c1725f4f2a0440bacc3a27cc69644ce2a15b003361a79e22497fbfb5b2d5f",
-    "sourceCommit": "adb69d997f82a62e8e22b594488c7d04a227db35"
+    "mode": "gateway",
+    "slug": "mockdata",
+    "gatewaySlug": "mockdata",
+    "sourceHash": "v1-dc3091cd94dd9e8000e20dc6d2cb983e644ddfc04176febdbaa9f49dfd959aac",
+    "sourceCommit": "5c89d6abb778d45da5d92002eb251978622bedf9"
   }
 }
